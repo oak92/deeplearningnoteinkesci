@@ -1,0 +1,2 @@
+# deeplearningnoteinkesci
+伯禹教育平台深度学习笔记
