@@ -13,7 +13,8 @@
 **训练集(Training set):**  用于训练模型,进行模型拟合的数据样本  
 **验证集(Validation set):**  一般是模型训练中预留出来的一部分样本,用于对模型能力进行初步评估,并以此调整模型参数.  
 **测试集(Test set):**  用来评估最终模型的数据集  
-
+验证集和测试集的区别:  
+![image](https://github.com/oak92/deeplearningnoteinkesci/blob/master/images/formulas/validationsetVStestset.png)
 一个形象的比喻：  
     训练集-----------学生的课本；学生 根据课本里的内容来掌握知识。  
     验证集------------作业，通过作业可以知道 不同学生学习情况、进步的速度快慢。  
@@ -32,17 +33,19 @@
 回归问题中的损失函数:  
 1,均方误差(Mean Squared Error),也叫MSE/平方损失/L2损失. 
 数学公式 
-
+![image](https://github.com/oak92/deeplearningnoteinkesci/blob/master/images/formulas/MSE.png)
 顾名思义，均方误差（MSE）度量的是预测值和实际观测值间差的平方的均值。它只考虑误差的平均大小，不考虑其方向。但由于经过平方，与真实值偏离较多的预测值会比偏离较少的预测值受到更为严重的惩罚。再加上 MSE 的数学特性很好，这使得计算梯度变得更容易。是回归问题中最常见的损失函数(本课程中使用的也是此函数).
   
 2,均方根误差(Root Mean Squared Error),RMSE  
 数学公式
+![image](https://github.com/oak92/deeplearningnoteinkesci/blob/master/images/formulas/RMSE.png)
 
 均方根误差是均方误差的算术平方根，能够直观观测预测值与实际值的离散程度。  
 通常用来作为回归算法的性能指标。
 
 3,平均绝对误差(Mean Absolute Error),MAE/L1损失  
 数学公式
+![image](https://github.com/oak92/deeplearningnoteinkesci/blob/master/images/formulas/MAE.png)
 平均绝对误差（MAE）度量的是预测值和实际观测值之间绝对差之和的平均值。和 MSE 一样，这种度量方法也是在不考虑方向的情况下衡量误差大小。但和 MSE 的不同之处在于，MAE 需要像线性规划这样更复杂的工具来计算梯度。此外，MAE 对异常值更加稳健，因为它不使用平方。
 平均绝对误差是绝对误差的平均值 ，平均绝对误差能更好地反映预测值误差的实际情况。  
 通常用来作为回归算法的性能指标。  
@@ -51,6 +54,7 @@
 1,交叉熵损失(Cross Entropy Loss),也叫负对数似然  
 这是分类问题中最常见的设置。随着预测概率偏离实际标签，交叉熵损失会逐渐增加。  
 数学公式  
+![image](https://github.com/oak92/deeplearningnoteinkesci/blob/master/images/formulas/CrossEntropy.png)
 注意，当实际标签为 1(y(i)=1) 时，函数的后半部分消失，而当实际标签是为 0(y(i=0)) 时，函数的前半部分消失。简言之，我们只是把对真实值类别的实际预测概率的对数相乘。还有重要的一点是，交叉熵损失会重重惩罚那些置信度高但是错误的预测值。  
 2,Hinge Loss/多分类 SVM 损失  
 数学公式  
